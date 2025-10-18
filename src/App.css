@@ -1,1 +1,61 @@
-@import "tailwindcss";
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Apply the main background to the wrapper used in App.jsx (it has class `min-h-screen`) */
+.min-h-screen {
+  /* gradient: from light to white to primary at low opacity */
+  background: linear-gradient(135deg, #F9FAFB 0%, #ffffff 50%, rgba(79,70,229,0.08) 100%);
+  color: #1f2937; /* text-gray-800 */
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+/* Dark mode background for the same wrapper when it also has the `dark` class */
+.min-h-screen.dark {
+  background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
+  color: #e5e7eb; /* text-gray-200 */
+}
+
+h1, h2, h3 {
+  font-weight: 600; /* font-semibold */
+  color: #4F46E5; /* primary */
+}
+
+/* dark variant for headings (applies when an ancestor has the `dark` class) */
+.min-h-screen.dark h1,
+.min-h-screen.dark h2,
+.min-h-screen.dark h3 {
+  color: #10B981; /* accent */
+}
+
+button {
+  transition: all 300ms ease;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+}
+
+.card {
+  backdrop-filter: blur(8px); /* similar to backdrop-blur-md */
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.min-h-screen.dark .card {
+  background-color: rgba(31,41,55,0.6); /* gray-800/60 */
+}
+
+.card:hover {
+  box-shadow: 0 0 14px rgba(79,70,229,0.35);
+}
