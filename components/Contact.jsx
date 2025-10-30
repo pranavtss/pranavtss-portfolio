@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <section id="contact" className="space-y-6 max-w-5xl mx-auto">
       <h2 className="text-3xl font-semibold border-b-2 border-indigo-500 inline-block pb-1">
-        Contact Me
+        <span className="heading-multicolor">Contact Me</span>
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">

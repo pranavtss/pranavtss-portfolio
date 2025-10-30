@@ -6,6 +6,7 @@ import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Starfield from "../components/Starfield";
 
 const pageVariants = {
   hidden: { opacity: 0, x: 60 },
@@ -16,8 +17,9 @@ const pageVariants = {
 export default function PortfolioPage() {
   return (
     <motion.div variants={pageVariants} initial="hidden" animate="enter" exit="exit">
+      <Starfield />
       <Navbar />
-      <main className="max-w-5xl mx-auto px-4 py-20 space-y-20">
+      <main className="relative z-10 max-w-5xl mx-auto px-4 py-20 space-y-20">
         <About />
         <Skills />
         <Projects />

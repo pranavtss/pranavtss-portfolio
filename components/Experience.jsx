@@ -1,22 +1,28 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import CircuitrixImg from "../src/assets/Circuitrix_competition.jpg";
+import FrontendCert from "../src/assets/Frontend(React)_certificate.pdf";
+import RasetPaper from "../src/assets/Raset-24_paperPresentation.pdf";
+import CV from "../src/assets/pranavtss-CV.pdf";
 
 const experiences = [
-    {
-        title: "Internship at Crayon'D",
-        description: [
-            "Gained hands-on experience in software development",
-            "Worked on UI design and implementation"
-        ],
-        date: "2023",
-    },
+  {
+    title: "Internship at Crayon'D",
+    description: [
+      "Gained hands-on experience in software development",
+      "Worked on UI design and implementation"
+    ],
+    date: "2023",
+    proof: CV,
+  },
     {
         title: "Competition: Circuitrix (Pragyan)",
         description: [
             "Showcased technical skills in circuit design",
             "Worked with embedded systems"
         ],
-        date: "2023",
+    date: "2023",
+    proof: CircuitrixImg,
     },
     {
         title: "Competition: Hardwired (Infotsav)",
@@ -24,7 +30,8 @@ const experiences = [
             "Competed in hardware challenges",
             "Solved embedded systems problems under time constraints"
         ],
-        date: "2023",
+    date: "2023",
+    proof: RasetPaper,
     },
     {
         title: "Certifications",
@@ -35,7 +42,8 @@ const experiences = [
             "CSS (Basic) – HackerRank",
             "Frontend Developer (React)"
         ],
-        date: "2023",
+    date: "2023",
+    proof: FrontendCert,
     },
 ];
 
@@ -54,10 +62,10 @@ export default function Experience() {
   return (
     <section id="experience" className="space-y-6 max-w-5xl mx-auto">
       <h2 className="text-3xl font-semibold border-b-2 border-indigo-500 inline-block pb-1">
-        Experience & Achievements
+        <span className="heading-multicolor">Experience & Achievements</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {experiences.map(({ title, description, date }) => {
+  {experiences.map(({ title, description, date, proof }) => {
           const key = title;
           const isOpen = !!open[key];
           const summary = Array.isArray(description) ? description[0] : description;
@@ -88,13 +96,18 @@ export default function Experience() {
                     animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
                     transition={{ duration: 0.35 }}
                   >
-                    {extras.length > 0 && (
-                      <ul className="mt-2 text-sm text-gray-300 list-disc list-inside space-y-1">
-                        {extras.map((d, i) => (
-                          <li key={i}>{d}</li>
-                        ))}
-                      </ul>
-                    )}
+                                {extras.length > 0 && (
+                                  <ul className="mt-2 text-sm text-gray-300 list-disc list-inside space-y-1">
+                                    {extras.map((d, i) => (
+                                      <li key={i}>{d}</li>
+                                    ))}
+                                  </ul>
+                                )}
+                                {proof && (
+                                  <div className="mt-3">
+                                    <a href={proof} target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:underline">View proof</a>
+                                  </div>
+                                )}
                   </motion.div>
                 </div>
 

@@ -21,9 +21,7 @@ export default function About() {
       }`}
     >
       <h2 className="text-3xl font-semibold border-b-2 border-indigo-500 inline-block pb-1">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-300">
-          About
-        </span>
+        <span className="heading-multicolor">About</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
         <aside className="md:col-span-1 pr-2 flex flex-col items-start">

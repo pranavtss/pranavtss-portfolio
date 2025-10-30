@@ -17,7 +17,7 @@ export default function Skills() {
   return (
     <section id="skills" className="space-y-6 max-w-5xl mx-auto">
       <h2 className="text-3xl font-semibold border-b-2 border-indigo-500 inline-block pb-1">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-300">Skills</span>
+        <span className="heading-multicolor">Skills & Expertise</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {Object.entries(skills).map(([category, list]) => (

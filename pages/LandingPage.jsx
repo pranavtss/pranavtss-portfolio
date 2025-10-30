@@ -131,11 +131,5 @@ export default function LandingPage({ onEnter }) {
   );
 }
 
-// add handlers to detect scroll/swipe/keys and trigger onEnter
-// we add them outside the component to keep the file simple; component uses onClick too
 LandingPage.defaultProps = {};
 
-// attach listeners via a wrapper component using a ref to the root element would be ideal,
-// but since LandingPage is exported as a function component used directly, we add a small
-// effect inside a new wrapper that calls onEnter when scrolling down. To keep changes minimal,
-// consumers can pass onEnter and this file will attach listeners when mounted.
