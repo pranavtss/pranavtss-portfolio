@@ -259,4 +259,15 @@
   .starfield .light-ray.rtl {
     animation-name: sweep-rtl;
   }
+
+  /* Floating large image animation used by navbar modal */
+  .animate-float {
+    animation: float-y 6s ease-in-out infinite;
+  }
+
+  @keyframes float-y {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.01); }
+    100% { transform: translateY(0) scale(1); }
+  }
 }
